@@ -1,0 +1,77 @@
+<!-- home.html -->
+
+<div class="home-container">
+
+  <div class="hero-section">
+    <h1>Delicious Food Delivered To You 🍔</h1>
+    <p>Order your favorite meals anytime, anywhere</p>
+  </div>
+
+  <div class="food-grid">
+
+    @for(food of foods; track food.id){
+
+    <div class="food-card">
+
+      <div class="food-image-container">
+        <img [src]="food.imageUrl" [alt]="food.name" class="food-image">
+
+        <span class="veg-badge" [class.non-veg]="!food.isVeg">
+          {{ food.isVeg ? 'VEG' : 'NON VEG' }}
+        </span>
+      </div>
+
+      <div class="food-content">
+
+        <div class="food-top">
+          <h2>{{ food.name }}</h2>
+
+          <span class="rating">
+            ⭐ {{ food.rating }}
+          </span>
+        </div>
+
+        <p class="category">{{ food.category }}</p>
+
+        <p class="description">
+          {{ food.description }}
+        </p>
+
+        <div class="food-bottom">
+
+          <div class="price">
+            ₹{{ food.price }}
+          </div>
+
+          <div class="delivery-time">
+            ⏱ {{ food.deliveryTime }} mins
+          </div>
+
+        </div>
+
+
+        <div class="food-actions">
+
+          <button class="cart-btn">
+            🛒 Cart
+          </button>
+
+          <button class="order-btn" [routerLink]="['/order', food.id]">
+            ⚡ Order
+          </button>
+
+          <button class="wishlist-btn">
+            ❤️ Wish
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    }
+
+  </div>
+
+</div>

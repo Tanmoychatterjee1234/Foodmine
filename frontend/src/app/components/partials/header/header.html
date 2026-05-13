@@ -1,0 +1,48 @@
+<!-- header.component.html -->
+
+<header class="header">
+
+  <!-- Logo -->
+  <div class="logo">
+    <span class="logo-icon">🍔</span>
+    <span class="logo-text">FoodExpress</span>
+  </div>
+
+  <!-- Location -->
+  <div class="location">
+    <span class="location-label">Deliver To</span>
+    <div class="location-value">
+      <span>📍 Kolkata, India</span>
+    </div>
+  </div>
+
+  <!-- Search -->
+  <div class="search-container">
+    <input type="text" placeholder="Search restaurants, food..." #searchBox (keyup)="search(searchBox.value)" />
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="#">Home</a>
+    <a href="#">Restaurants</a>
+    <a href="#">Offers</a>
+    <a href="#">Orders</a>
+    <a href="#">Help</a>
+  </nav>
+
+  <!-- Actions -->
+  <div class="actions">
+    <button class="login-btn">Login</button>
+
+    <button class="cart-btn">
+      🛒 Cart
+      <span class="cart-count">3</span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    ☰
+  </div>
+
+</header>
