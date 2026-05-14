@@ -4,11 +4,7 @@
 
   <div class="image-section">
 
-    <img
-      [src]="food.imageUrl"
-      [alt]="food.name"
-      class="food-image"
-    >
+    <img [src]="food.imageUrl" [alt]="food.name" class="food-image">
 
   </div>
 
@@ -45,28 +41,28 @@
       <h2>Choose Payment Method</h2>
 
       <label>
-        <input type="radio" name="payment" checked>
+        <input type="radio" name="payment" [value]="'UPI'" [(ngModel)]="selectedPaymentMethod" checked>
         UPI / Google Pay
       </label>
 
       <label>
-        <input type="radio" name="payment">
+        <input type="radio" [value]="'CARD'" [(ngModel)]="selectedPaymentMethod" name="payment">
         Credit / Debit Card
       </label>
 
       <label>
-        <input type="radio" name="payment">
+        <input type="radio" [value]="'COD'" [(ngModel)]="selectedPaymentMethod" name="payment">
         Cash on Delivery
       </label>
 
       <label>
-        <input type="radio" name="payment">
+        <input type="radio" [value]="'NET_BANKING'" [(ngModel)]="selectedPaymentMethod" name="payment">
         Net Banking
       </label>
 
     </div>
 
-    <button class="pay-btn">
+    <button class="pay-btn" (click)="confirmOrder()">
       ⚡ Pay ₹{{ food.price }}
     </button>
 
